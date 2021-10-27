@@ -2,15 +2,17 @@
 /*************** Custom Propertys ****************/
 :root{
     --unidad-seleccion: 5;
-    --ancho-imagen: min(60vh, 60vw);
+    --ancho-imagen: min(50vh, 50vw);
     --bg-color: #000505;
+    --primary-color: #047;
+    --primary-color-alpha: #0473;
 }
 
 
 /********* Reset *************/
 *, *::before, *::after{
     box-sizing:border-box;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -18,20 +20,51 @@ html{
     font-size: 16px;
 }
 body{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     background-color: var(--bg-color);
+    min-height: 100vh;
     color: #eee;
     margin: 0;
     padding: 0;
 }
 h1{
-    margin: .5em auto;
     text-align: center;
+    font-size: 1.3em;
 }
 img{
     display: inline-block;
 }
 
+a{
+    display: inline-block;
+    color: inherit;
+}
+
 /*************** Styles ***********/
+
+
+/***** Layout ****/
+
+
+header, footer{
+    background-color: var(--primary-color);
+    padding: 1em;
+    text-align: center;
+}
+
+
+main{
+    display: block;
+    flex-grow: 1;
+    width: 100%;
+    padding: 1em;
+}
+
+
+/********** Generales **********/
+
 
 .inputs{
     width: 90%;
@@ -53,7 +86,7 @@ img{
     color: inherit;
     outline: none;
     text-align: center;
-    border: solid 1px;
+    border: solid 1px var(--primary-color);
     border-radius: 100vh;
 }
 .input:focus{
@@ -62,11 +95,14 @@ img{
 
 
 .producto{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--ancho-imagen), 50%));
+    grid-auto-rows: var(--ancho-imagen);
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 1em;
+    justify-content: center;
+    justify-items: center;
+
+    grid-row-gap: 1em;
     width: 100%;
     margin: 1em auto;
 }
@@ -77,6 +113,7 @@ img{
     overflow: hidden;    
     width: var(--ancho-imagen);
     height: var(--ancho-imagen);
+    margin: 1em;
 }
 .producto-img{
     display: block;
@@ -95,20 +132,16 @@ img{
     margin-top: calc( (100% / var(--unidad-seleccion)) / -2 );
 
     border: solid thin #000;
-    background-color: #fff3;
+    background-color: var(--primary-color-alpha);
     z-index: 20;
 }
 
-.producto-info{
-    display: block;
-}
 .producto-miniatura{
     position: relative;
-    border: solid;
     display: block;
     width: var(--ancho-imagen);
     height: var(--ancho-imagen);
-    margin: 1em auto;
+    margin: 1em;
     overflow: hidden;
 }
 .producto-miniatura-img{
@@ -122,32 +155,31 @@ img{
 }
 
 
-.producto-datos{
-    padding-left: 1em;
-}
-.producto-datos p{
-    line-height: 1.5;
-    margin-bottom: .5em;
-}
 
+
+/*info*/
+
+.seccion-info{
+    display: block;
+    width: 90%;
+    margin: 1em auto;
+    text-align: center;
+}
 
 /************** Responsive Design **********/
 
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 900px){
     html{
         font-size: 14px;
     }
 }
 
-@media screen and (max-width: 600px){
-    :root{
-    --ancho-imagen: 60vw;
-    }
+@media screen and (max-width: 700px){
     html{
-        font-size: 12px;
+        font-size: 13px;
     }
     .producto{
-        flex-direction: column;
+        /*flex-direction: column;*/
     }
 }

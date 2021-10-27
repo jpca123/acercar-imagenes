@@ -19,30 +19,42 @@
 
 <body>
 
-<h1>Zoom Sobre imagenes</h1>
+<header>
+    <h1>Zoom Sobre imagenes</h1>
+</header>
 
-<section class="inputs">
+<main>
+    <section class="inputs">
     <input class="input" type="number" min="0" max="99999" placeholder="Escribe el zoom que desee utilizar" id="unidad">
     <input class="input" type="file" accept="*/image" id="file">
     
-</section>
-
-<section class="producto">
-
-    <section class="producto-img-container">
-        <img src="https://picsum.photos/2000/2000" alt="" class="producto-img">
-
-        <span id="seleccion" class="producto-img-seleccion"></span>
     </section>
 
-    <section class="producto-info">
-        <div class="producto-miniatura">
-            <img alt="imagen random" class="producto-miniatura-img" id="imagen-miniatura">
-        </div>
+    <section class="producto">
 
+        <section class="producto-img-container">
+            <img src="https://picsum.photos/2000/2000" alt="" class="producto-img">
+
+            <span id="seleccion" class="producto-img-seleccion"></span>
+        </section>
+
+        <section class="producto-info">
+            <div class="producto-miniatura">
+                <img alt="imagen random" class="producto-miniatura-img" id="imagen-miniatura">
+            </div>
+
+        </section>
     </section>
-</section>
 
+    <section class="seccion-info">
+        <p>Para usar selecciona el factor de acercamiento o pulsa "x" + un numero de 0 a 9 ej: <strong>"x" + "8"</strong></p>
+    </section>
+</main>
+
+
+<footer>
+    <p>Diseñado por: <a href="https://jpca123.github.io/portafolio/">Juan Pablo Castilo</a></p>
+</footer>
 
     <script src="script.js">
     </script>
