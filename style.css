@@ -1,0 +1,153 @@
+
+/*************** Custom Propertys ****************/
+:root{
+    --unidad-seleccion: 5;
+    --ancho-imagen: min(60vh, 60vw);
+    --bg-color: #000505;
+}
+
+
+/********* Reset *************/
+*, *::before, *::after{
+    box-sizing:border-box;
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 16px;
+}
+body{
+    background-color: var(--bg-color);
+    color: #eee;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin: .5em auto;
+    text-align: center;
+}
+img{
+    display: inline-block;
+}
+
+/*************** Styles ***********/
+
+.inputs{
+    width: 90%;
+    margin: .5em auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input{
+    display: block;
+    margin: 1em auto;
+    flex-basis: 45%;
+    width: min(300px, 80%);
+    padding: .3em 1em;
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    color: inherit;
+    outline: none;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 100vh;
+}
+.input:focus{
+    box-shadow:0 0 .5em #fff;
+}
+
+
+.producto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1em;
+    width: 100%;
+    margin: 1em auto;
+}
+
+.producto-img-container{
+    position: relative;
+    display: block;
+    overflow: hidden;    
+    width: var(--ancho-imagen);
+    height: var(--ancho-imagen);
+}
+.producto-img{
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+
+}
+.producto-img-seleccion{
+    position: absolute;
+    display: block;
+    width: calc(100% / var(--unidad-seleccion));
+    height: calc(100% / var(--unidad-seleccion));
+    margin-left: calc( (100% / var(--unidad-seleccion)) / -2 );
+    margin-top: calc( (100% / var(--unidad-seleccion)) / -2 );
+
+    border: solid thin #000;
+    background-color: #fff3;
+    z-index: 20;
+}
+
+.producto-info{
+    display: block;
+}
+.producto-miniatura{
+    position: relative;
+    border: solid;
+    display: block;
+    width: var(--ancho-imagen);
+    height: var(--ancho-imagen);
+    margin: 1em auto;
+    overflow: hidden;
+}
+.producto-miniatura-img{
+    position: absolute;
+    display: block;
+    width: calc(100% * var(--unidad-seleccion));
+    height: calc(100% * var(--unidad-seleccion));
+    object-fit: contain;
+    margin-left: 50%;
+    margin-top: 50%;
+}
+
+
+.producto-datos{
+    padding-left: 1em;
+}
+.producto-datos p{
+    line-height: 1.5;
+    margin-bottom: .5em;
+}
+
+
+/************** Responsive Design **********/
+
+
+@media screen and (max-width: 800px){
+    html{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    :root{
+    --ancho-imagen: 60vw;
+    }
+    html{
+        font-size: 12px;
+    }
+    .producto{
+        flex-direction: column;
+    }
+}

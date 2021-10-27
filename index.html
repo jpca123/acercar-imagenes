@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000505">
+
+    <title>Zoom en Imagenes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- mi hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>Zoom Sobre imagenes</h1>
+
+<section class="inputs">
+    <input class="input" type="number" min="0" max="99999" placeholder="Escribe el zoom que desee utilizar" id="unidad">
+    <input class="input" type="file" accept="*/image" id="file">
+    
+</section>
+
+<section class="producto">
+
+    <section class="producto-img-container">
+        <img src="https://picsum.photos/2000/2000" alt="" class="producto-img">
+
+        <span id="seleccion" class="producto-img-seleccion"></span>
+    </section>
+
+    <section class="producto-info">
+        <div class="producto-miniatura">
+            <img alt="imagen random" class="producto-miniatura-img" id="imagen-miniatura">
+        </div>
+
+    </section>
+</section>
+
+
+    <script src="script.js">
+    </script>
+</body>
+
+</html>
