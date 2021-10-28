@@ -114,6 +114,7 @@ main{
     width: var(--ancho-imagen);
     height: var(--ancho-imagen);
     margin: 1em;
+    background-color: #222;
 }
 .producto-img{
     display: block;
@@ -143,6 +144,7 @@ main{
     height: var(--ancho-imagen);
     margin: 1em;
     overflow: hidden;
+    background-color: #222;
 }
 .producto-miniatura-img{
     position: absolute;
